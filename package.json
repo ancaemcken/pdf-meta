@@ -5,13 +5,17 @@
   "scripts": {
     "app:watch": "npx shadow-cljs watch app",
     "app:release": "npx shadow-cljs release app",
-    "dev": "app:watch"
+    "tailwindcss:watch": "npx @tailwindcss/cli -i src/css/main.css -o public/css/app.css -w",
+    "tailwindcss:build": "npx @tailwindcss/cli -i src/css/main.css -o public/css/app.css",
+    "dev": "run-p -l app:watch tailwindcss:watch",
+    "release": "run-s app:release tailwindcss:build"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.0",
     "shadow-cljs": "^3.4.11"
   },
   "dependencies": {
+    "npm-run-all2": "^9.0.1",
     "pdfjs-dist": "^6.0.227",
     "tailwindcss": "^4.3.0"
   }
