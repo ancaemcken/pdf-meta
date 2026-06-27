@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "clean": "rm -rf public/css/* public/js/*",
     "app:watch": "shadow-cljs watch app",
     "app:release": "shadow-cljs release app",
     "tailwindcss:watch": "tailwindcss -i src/css/main.css -o public/css/app.css -w",
