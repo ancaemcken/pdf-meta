@@ -12,7 +12,10 @@
   </head>
   <body class="bg-transparent antialiased h-dvh dark:bg-neutral-900">
     <div id="app"></div>
-    <script type="module"> import pdfjsDist from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@6.0.227/+esm' </script>
+    <script type="module">
+      import * as pdfjsLib from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@6.0.227/+esm';
+      globalThis.pdfjsLib = pdfjsLib;
+    </script>
     <script src="/js/main.js" defer></script>
   </body>
 </html>
